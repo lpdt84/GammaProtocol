@@ -53,10 +53,9 @@ contract Trade0x is CalleeInterface {
     );
 
     /**
-     * @dev fill 0x order
+     * @dev fill 0x order. It is dangerous to do an unlimited approval to this contract
      * @param _sender the original sender who wants to trade on 0x
      * @param _data abi-encoded order, fillamount, signature and _sender. fee payer is the address we pull weth from.
-     * @note it is dangerous to do an unlimited approval to this contract
      */
 
     function callFunction(address payable _sender, bytes memory _data) external override {

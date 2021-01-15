@@ -262,8 +262,8 @@ contract('Callee contract test', async ([deployer, user1, user2]) => {
       // one time approvals needed
       await controllerProxy.setOperator(payableProxyAddress, true, {from: user1})
       await usdc.approve(marginPoolAddress, LARGE_NUMBER, {from: user1})
-      await put1.approve(callee.address, LARGE_NUMBER, {from: user1})
 
+      await put1.approve(callee.address, optionsToMint, {from: user1})
       await payableProxyController.operate(actionArgs, user1, {from: user1, gasPrice: gasPriceWei, value: feeAmount})
 
       // keep track of owner and pool balances after
